@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 台股處置聽牌即時預測看板</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --color-red: #ef4444;
+            --color-yellow: #eab308;
+            --color-green: #10b981;
+            --color-cyan: #06b6d4;
+            --border-color: #334155;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Outfit', sans-serif;
+            margin: 0;
+            padding: 24px;
+        }
+        header {
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+        }
+        .update-time {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        th, td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: rgba(255,255,255,0.03);
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background-color: rgba(255,255,255,0.01);
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .badge-red {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--color-red);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        .badge-yellow {
+            background-color: rgba(234, 179, 8, 0.15);
+            color: var(--color-yellow);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+        }
+        .badge-gray {
+            background-color: rgba(148, 163, 184, 0.15);
+            color: var(--text-secondary);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+        .text-right {
+            text-align: right;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .price-up {
+            color: var(--color-red);
+            font-weight: bold;
+        }
+        .price-down {
+            color: var(--color-green);
+            font-weight: bold;
+        }
+        .progress-bar {
+            height: 6px;
+            background-color: #334155;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            location.reload();
+        }, 60000); // 每分鐘自動刷新
+    </script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>🔥 台股處置聽牌即時預測監控</h1>
+            <div style="margin-top: 6px; color: var(--text-secondary); font-size: 0.95rem;">
+                基準營業日: 2026-06-04 &nbsp;|&nbsp; 預測目標日: 2026-06-05
+            </div>
+        </div>
+        <div class="update-time">
+            最後更新: 2026-06-06 03:36:37 (每 60 秒自動重新整理)
+        </div>
+    </header>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>代號</th>
+                <th>名稱</th>
+                <th class="text-center">市場</th>
+                <th>聽牌背景原因</th>
+                <th class="text-right">昨日收盤</th>
+                <th class="text-right">今日最新</th>
+                <th class="text-right">今日成交</th>
+                <th class="text-right">最易觸發價格門檻</th>
+                <th class="text-right">成交量觸發門檻</th>
+                <th class="text-center">狀態狀態</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+            <tr>
+                <td><strong>3149</strong></td>
+                <td>正達</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 4 天 (背景>=2)</td>
+                <td class="text-right">91.00 元</td>
+                <td class="text-right"><strong>90.80 元</strong></td>
+                <td class="text-right">33,940 張</td>
+                <td class="text-right price-up">▲ 91.00元 (+0.22%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    21,274 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">當日週轉率達 10.0% 門檻</div>
+                </td>
+                <td class="text-center"><span class="badge badge-red">🔥 極易觸發</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>9110</strong></td>
+                <td>越南控-DR</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 4 天 (背景>=2)</td>
+                <td class="text-right">3.96 元</td>
+                <td class="text-right"><strong>3.95 元</strong></td>
+                <td class="text-right">334 張</td>
+                <td class="text-right price-up">▲ 3.96元 (+0.25%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    329 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-red">🔥 極易觸發</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>1312</strong></td>
+                <td>國喬</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)</td>
+                <td class="text-right">14.20 元</td>
+                <td class="text-right"><strong>14.40 元</strong></td>
+                <td class="text-right">29,597 張</td>
+                <td class="text-right price-up">▲ 14.55元 (+1.04%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    110,506 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">當日週轉率達 10.0% 門檻</div>
+                </td>
+                <td class="text-center"><span class="badge badge-yellow">⚠️ 重點預警</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>1718</strong></td>
+                <td>中纖</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)</td>
+                <td class="text-right">9.68 元</td>
+                <td class="text-right"><strong>9.85 元</strong></td>
+                <td class="text-right">204,881 張</td>
+                <td class="text-right price-up">▲ 9.68元 (-1.73%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    39,455 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-yellow">⚠️ 重點預警</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>1809</strong></td>
+                <td>中釉</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)</td>
+                <td class="text-right">58.50 元</td>
+                <td class="text-right"><strong>59.60 元</strong></td>
+                <td class="text-right">25,549 張</td>
+                <td class="text-right price-up">▲ 58.50元 (-1.85%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    16,628 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">當日週轉率達 10.0% 門檻</div>
+                </td>
+                <td class="text-center"><span class="badge badge-yellow">⚠️ 重點預警</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>2491</strong></td>
+                <td>吉祥全</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)</td>
+                <td class="text-right">34.00 元</td>
+                <td class="text-right"><strong>34.70 元</strong></td>
+                <td class="text-right">9,150 張</td>
+                <td class="text-right price-up">▲ 34.00元 (-2.02%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    3,217 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-yellow">⚠️ 重點預警</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>2351</strong></td>
+                <td>順德</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)<br>• 9日內累計 5 天 (背景>=5)</td>
+                <td class="text-right">211.00 元</td>
+                <td class="text-right"><strong>200.50 元</strong></td>
+                <td class="text-right">5,763 張</td>
+                <td class="text-right price-up">▲ 211.00元 (+5.24%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    41,283 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>4807</strong></td>
+                <td>日成-KY</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 3 天 (背景>=2)</td>
+                <td class="text-right">35.35 元</td>
+                <td class="text-right"><strong>38.50 元</strong></td>
+                <td class="text-right">1,740 張</td>
+                <td class="text-right price-up">▲ 35.35元 (-8.18%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    1,486 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>6861</strong></td>
+                <td>睿生光電</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)<br>• 29日內累計 11 天 (背景>=11)</td>
+                <td class="text-right">348.50 元</td>
+                <td class="text-right"><strong>351.50 元</strong></td>
+                <td class="text-right">667 張</td>
+                <td class="text-right price-down">▼ 282.50元 (-19.63%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    7,124 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>9103</strong></td>
+                <td>美德醫療-DR</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)</td>
+                <td class="text-right">5.98 元</td>
+                <td class="text-right"><strong>5.85 元</strong></td>
+                <td class="text-right">15,671 張</td>
+                <td class="text-right price-up">▲ 7.00元 (+19.66%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    6,903 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>6442</strong></td>
+                <td>光聖</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 9日內累計 5 天 (背景>=5)</td>
+                <td class="text-right">2145.00 元</td>
+                <td class="text-right"><strong>2055.00 元</strong></td>
+                <td class="text-right">4,348 張</td>
+                <td class="text-right price-up">▲ 2505.00元 (+21.90%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    7,203 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">當日週轉率達 10.0% 門檻</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>2486</strong></td>
+                <td>一詮</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 連續注意 2 天 (背景>=2)</td>
+                <td class="text-right">274.50 元</td>
+                <td class="text-right"><strong>279.50 元</strong></td>
+                <td class="text-right">9,460 張</td>
+                <td class="text-right price-up">▲ 345.00元 (+23.43%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    23,094 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">當日週轉率達 10.0% 門檻</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+            <tr>
+                <td><strong>3450</strong></td>
+                <td>聯鈞</td>
+                <td class="text-center">上市</td>
+                <td style="font-size: 0.85rem; color: var(--text-secondary);">• 29日內累計 12 天 (背景>=11)</td>
+                <td class="text-right">520.00 元</td>
+                <td class="text-right"><strong>501.00 元</strong></td>
+                <td class="text-right">18,582 張</td>
+                <td class="text-right price-up">▲ 635.00元 (+26.75%)</td>
+                <td class="text-right" style="color: var(--color-cyan); font-size: 0.9rem;">
+                    85,953 張
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">60日日平均成交量放大 (5.0倍)</div>
+                </td>
+                <td class="text-center"><span class="badge badge-gray">監控中</span></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+    <div style="margin-top: 30px; font-size: 0.85rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); padding-top: 12px;">
+        * 免責聲明：本儀表板所載數值為透過公開公式逆推之估算值，實際注意與處置股票之認定以臺灣證券交易所與中華民國證券櫃檯買賣中心官方公告為準。投資人操作請審慎評估風險。
+    </div>
+</body>
+</html>
+    
