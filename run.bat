@@ -1,0 +1,6 @@
+@echo off
+chcp 65001 > nul
+echo 正在執行注意股與處置預警統計分析...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0Get-AttentionStocks.ps1"
+echo 正在啟動即時監控儀表板視窗...
+python "%~dp0Show-DashboardGUI.py"

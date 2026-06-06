@@ -1,0 +1,776 @@
+[
+  {
+    "code": "1409",
+    "name": "新纖",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 29.95,
+    "target_price": 26.05,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "1563",
+    "name": "巧新",
+    "type": "5分鐘",
+    "start_date": "2026-06-03",
+    "baseline_price": 69.8,
+    "target_price": 60.7,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "1568",
+    "name": "倉佑",
+    "type": "20分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 46.3,
+    "target_price": 39.35,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "1568",
+    "name": "倉佑",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 46.5,
+    "target_price": 40.45,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2302",
+    "name": "麗正",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 38.25,
+    "target_price": 33.3,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2327",
+    "name": "國巨*",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 674.0,
+    "target_price": 586.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2337",
+    "name": "旺宏",
+    "type": "5分鐘",
+    "start_date": "2026-06-03",
+    "baseline_price": 175.5,
+    "target_price": 152.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2375",
+    "name": "凱美",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 166.5,
+    "target_price": 145.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2424",
+    "name": "隴華",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 13.15,
+    "target_price": 11.45,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2455",
+    "name": "全新",
+    "type": "20分鐘",
+    "start_date": "2026-05-27",
+    "baseline_price": 423.5,
+    "target_price": 360.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2472",
+    "name": "立隆電",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 371.0,
+    "target_price": 323.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2478",
+    "name": "大毅",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 120.0,
+    "target_price": 104.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2492",
+    "name": "華新科",
+    "type": "20分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 423.0,
+    "target_price": 359.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2492",
+    "name": "華新科",
+    "type": "20分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 394.0,
+    "target_price": 335.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2492",
+    "name": "華新科",
+    "type": "20分鐘",
+    "start_date": "2026-05-27",
+    "baseline_price": 328.5,
+    "target_price": 279.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2911",
+    "name": "麗嬰房",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 9.25,
+    "target_price": 7.86,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2911",
+    "name": "麗嬰房",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 9.55,
+    "target_price": 8.31,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3021",
+    "name": "鴻名",
+    "type": "20分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 39.0,
+    "target_price": 33.15,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3021",
+    "name": "鴻名",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 33.1,
+    "target_price": 28.8,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3026",
+    "name": "禾伸堂",
+    "type": "20分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 605.0,
+    "target_price": 514.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3026",
+    "name": "禾伸堂",
+    "type": "20分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 523.0,
+    "target_price": 444.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3090",
+    "name": "日電貿",
+    "type": "20分鐘",
+    "start_date": "2026-05-27",
+    "baseline_price": 232.0,
+    "target_price": 197.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3167",
+    "name": "大量",
+    "type": "20分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 879.0,
+    "target_price": 747.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3189",
+    "name": "景碩",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 702.0,
+    "target_price": 611.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3346",
+    "name": "麗清",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 23.25,
+    "target_price": 20.25,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3481",
+    "name": "群創",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 59.4,
+    "target_price": 51.7,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3528",
+    "name": "安馳",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 129.0,
+    "target_price": 112.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3532",
+    "name": "台勝科",
+    "type": "20分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 290.0,
+    "target_price": 246.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3535",
+    "name": "晶彩科",
+    "type": "5分鐘",
+    "start_date": "2026-06-05",
+    "baseline_price": 137.0,
+    "target_price": 119.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4722",
+    "name": "國精化",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 284.0,
+    "target_price": 247.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4916",
+    "name": "事欣科",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 101.5,
+    "target_price": 88.3,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4919",
+    "name": "新唐",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 206.5,
+    "target_price": 175.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4958",
+    "name": "臻鼎-KY",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 532.0,
+    "target_price": 463.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6116",
+    "name": "彩晶",
+    "type": "20分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 21.6,
+    "target_price": 18.35,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6116",
+    "name": "彩晶",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 18.25,
+    "target_price": 15.9,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6239",
+    "name": "力成",
+    "type": "5分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 357.5,
+    "target_price": 311.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6271",
+    "name": "同欣電",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 254.5,
+    "target_price": 221.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6405",
+    "name": "悅城",
+    "type": "20分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 76.9,
+    "target_price": 65.4,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6449",
+    "name": "鈺邦",
+    "type": "20分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 395.0,
+    "target_price": 336.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6742",
+    "name": "澤米",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 61.5,
+    "target_price": 53.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6770",
+    "name": "力積電",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 87.0,
+    "target_price": 75.7,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6806",
+    "name": "森崴能源",
+    "type": "5分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 6.1,
+    "target_price": 5.31,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6806",
+    "name": "森崴能源",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 8.35,
+    "target_price": 7.26,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6834",
+    "name": "天二科技",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 77.7,
+    "target_price": 66.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6834",
+    "name": "天二科技",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 70.5,
+    "target_price": 61.3,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6906",
+    "name": "現觀科",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 103.0,
+    "target_price": 89.6,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "7610",
+    "name": "聯友金屬-創",
+    "type": "20分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 1660.0,
+    "target_price": 1410.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "7610",
+    "name": "聯友金屬-創",
+    "type": "20分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 1250.0,
+    "target_price": 1060.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8021",
+    "name": "尖點",
+    "type": "20分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 440.0,
+    "target_price": 374.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8454",
+    "name": "富邦媒",
+    "type": "5分鐘",
+    "start_date": "2026-06-05",
+    "baseline_price": 333.0,
+    "target_price": 289.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3288",
+    "name": "點晶",
+    "type": "5分鐘",
+    "start_date": "2026-06-05",
+    "baseline_price": 26.6,
+    "target_price": 23.15,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3523",
+    "name": "迎輝",
+    "type": "20分鐘",
+    "start_date": "2026-06-05",
+    "baseline_price": 23.0,
+    "target_price": 19.55,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4707",
+    "name": "磐亞",
+    "type": "5分鐘",
+    "start_date": "2026-06-05",
+    "baseline_price": 21.1,
+    "target_price": 18.35,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8358",
+    "name": "金居",
+    "type": "20分鐘",
+    "start_date": "2026-06-05",
+    "baseline_price": 565.0,
+    "target_price": 480.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3556",
+    "name": "禾瑞亞",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 76.0,
+    "target_price": 66.1,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6548",
+    "name": "長科*",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 89.2,
+    "target_price": 77.6,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "7709",
+    "name": "榮田",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 127.0,
+    "target_price": 110.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8277",
+    "name": "商丞",
+    "type": "5分鐘",
+    "start_date": "2026-06-04",
+    "baseline_price": 11.4,
+    "target_price": 9.92,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4979",
+    "name": "華星光",
+    "type": "20分鐘",
+    "start_date": "2026-06-03",
+    "baseline_price": 630.0,
+    "target_price": 536.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2061",
+    "name": "風青",
+    "type": "20分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 40.2,
+    "target_price": 34.15,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3485",
+    "name": "敘豐",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 364.0,
+    "target_price": 316.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3523",
+    "name": "迎輝",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 17.5,
+    "target_price": 15.2,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4973",
+    "name": "廣穎",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 156.5,
+    "target_price": 136.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "5321",
+    "name": "美而快",
+    "type": "20分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 53.3,
+    "target_price": 45.3,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6182",
+    "name": "合晶",
+    "type": "20分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 97.0,
+    "target_price": 82.4,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6654",
+    "name": "天正國際",
+    "type": "5分鐘",
+    "start_date": "2026-06-02",
+    "baseline_price": 169.0,
+    "target_price": 147.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6291",
+    "name": "沛亨",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 679.0,
+    "target_price": 591.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6488",
+    "name": "環球晶",
+    "type": "20分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 1015.0,
+    "target_price": 863.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "7828",
+    "name": "創新服務",
+    "type": "5分鐘",
+    "start_date": "2026-06-01",
+    "baseline_price": 1410.0,
+    "target_price": 1225.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3191",
+    "name": "雲嘉南",
+    "type": "5分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 26.45,
+    "target_price": 23.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6821",
+    "name": "聯寶",
+    "type": "5分鐘",
+    "start_date": "2026-05-29",
+    "baseline_price": 72.0,
+    "target_price": 62.6,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "2061",
+    "name": "風青",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 33.6,
+    "target_price": 29.25,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3236",
+    "name": "千如",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 56.9,
+    "target_price": 49.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "5321",
+    "name": "美而快",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 56.8,
+    "target_price": 48.3,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6173",
+    "name": "信昌電",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 226.0,
+    "target_price": 192.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6182",
+    "name": "合晶",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 90.2,
+    "target_price": 76.7,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6570",
+    "name": "維田",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 59.2,
+    "target_price": 51.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8042",
+    "name": "金山電",
+    "type": "20分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 150.5,
+    "target_price": 128.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8291",
+    "name": "尚茂",
+    "type": "5分鐘",
+    "start_date": "2026-05-28",
+    "baseline_price": 133.0,
+    "target_price": 115.5,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "4127",
+    "name": "天良",
+    "type": "5分鐘",
+    "start_date": "2026-05-27",
+    "baseline_price": 68.1,
+    "target_price": 59.2,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3491",
+    "name": "昇達科",
+    "type": "5分鐘",
+    "start_date": "2026-05-26",
+    "baseline_price": 2090.0,
+    "target_price": 1820.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "3675",
+    "name": "德微",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 319.5,
+    "target_price": 278.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "5321",
+    "name": "美而快",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 38.9,
+    "target_price": 33.85,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "6538",
+    "name": "倉和",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 127.5,
+    "target_price": 111.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8027",
+    "name": "鈦昇",
+    "type": "20分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 244.5,
+    "target_price": 208.0,
+    "updated_at": "2026-06-05"
+  },
+  {
+    "code": "8291",
+    "name": "尚茂",
+    "type": "5分鐘",
+    "start_date": "2026-05-25",
+    "baseline_price": 100.0,
+    "target_price": 87.0,
+    "updated_at": "2026-06-05"
+  }
+]

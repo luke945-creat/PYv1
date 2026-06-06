@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台股處置股 - 黃金多方目標價監控看板</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --primary-glow: rgba(59, 130, 246, 0.5);
+            
+            --5m-color: #06b6d4;
+            --5m-glow: rgba(6, 182, 212, 0.15);
+            --20m-color: #f59e0b;
+            --20m-glow: rgba(245, 158, 11, 0.15);
+            
+            --success: #10b981;
+            --danger: #ef4444;
+            --accent: #8b5cf6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+            radial-gradient(at 10% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+            radial-gradient(at 90% 80%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Style */
+        header {
+            margin-bottom: 2.5rem;
+            text-align: center;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Info Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .summary-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .summary-info h3 {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .summary-info .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .summary-card.c-5m { border-left: 4px solid var(--5m-color); }
+        .summary-card.c-20m { border-left: 4px solid var(--20m-color); }
+        .summary-card.c-total { border-left: 4px solid var(--accent); }
+
+        /* Controls Section */
+        .controls-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 0.8rem 1rem 0.8rem 2.8rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        .filter-tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .filter-tab {
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .filter-tab:hover {
+            color: var(--text-primary);
+        }
+
+        .filter-tab.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-refresh {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 0.8rem 1.4rem;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn-refresh:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-refresh:active {
+            transform: translateY(0);
+        }
+
+        /* Table Card */
+        .table-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+            margin-bottom: 2rem;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1.2rem 1.5rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1.1rem 1.5rem;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.2s;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.3rem 0.7rem;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .badge-5m {
+            background: var(--5m-glow);
+            color: var(--5m-color);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .badge-20m {
+            background: var(--20m-glow);
+            color: var(--20m-color);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        /* Target price styles */
+        .price-text {
+            font-family: 'Outfit', monospace;
+            font-weight: 600;
+        }
+
+        .target-price-cell {
+            color: var(--success);
+            font-size: 1.05rem;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        }
+
+        .waiting-text {
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Calculator section */
+        .bottom-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        @media (min-width: 768px) {
+            .bottom-section {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .interactive-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .interactive-card h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            border-left: 4px solid var(--accent);
+            padding-left: 0.8rem;
+        }
+
+        .calc-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.7rem 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .form-group select:focus, .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .calc-result {
+            margin-top: 1.2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .calc-stat-box .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .calc-stat-box .stat-val {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Price alert utility */
+        .checker-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .checker-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .checker-result-box {
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .alert-triggered {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+        }
+
+        .alert-pending {
+            background: rgba(59, 130, 246, 0.15);
+            color: #3b82f6;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Empty State */
+        .empty-state {
+            padding: 3rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        .empty-state h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header style="display: flex; flex-direction: column; align-items: center; gap: 1rem; position: relative;">
+            <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; max-width: 1200px; margin-bottom: 0.5rem;">
+                <button onclick="location.href='index.html'" style="background: linear-gradient(135deg, #00d2ff 0%, #d800ff 100%); border: none; padding: 0.6rem 1.2rem; border-radius: 10px; color: white; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">📈 注意股 & 處置預警監控</button>
+                <span style="font-size: 0.9rem; color: var(--text-secondary);">系統版本: v2.1 (已整合)</span>
+            </div>
+            <h1>台股處置股黃金多方目標價監控看板</h1>
+            <p>歷史大數據統計實戰參數配置：5分鐘回檔 -13% (買點 87%)，20分鐘回檔 -15% (買點 85%)</p>
+        </header>
+
+        <!-- Summary Statistics -->
+        <div class="summary-grid">
+            <div class="summary-card c-total">
+                <div class="summary-info">
+                    <h3>總監控股票</h3>
+                    <div class="value" id="stat-total">-</div>
+                </div>
+                <div style="font-size: 2.2rem; opacity: 0.25;">📈</div>
+            </div>
+            <div class="summary-card c-5m">
+                <div class="summary-info">
+                    <h3>5分鐘處置股</h3>
+                    <div class="value" id="stat-5m">-</div>
+                </div>
+                <div style="font-size: 2.2rem; opacity: 0.25; color: var(--5m-color);">⚡</div>
+            </div>
+            <div class="summary-card c-20m">
+                <div class="summary-info">
+                    <h3>20分鐘處置股</h3>
+                    <div class="value" id="stat-20m">-</div>
+                </div>
+                <div style="font-size: 2.2rem; opacity: 0.25; color: var(--20m-color);">🛡️</div>
+            </div>
+        </div>
+
+        <!-- Filters and Search -->
+        <div class="controls-card">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="輸入股票代號或名稱搜尋...">
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" onclick="setFilter('all')">全部</button>
+                <button class="filter-tab" onclick="setFilter('5m')">5分鐘處置</button>
+                <button class="filter-tab" onclick="setFilter('20m')">20分鐘處置</button>
+                <button class="filter-tab" onclick="setFilter('waiting')">待開盤</button>
+            </div>
+            <button class="btn-refresh" onclick="loadData()">重新整理</button>
+        </div>
+
+        <!-- Table Card -->
+        <div class="table-card">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>股票代號</th>
+                            <th>股票名稱</th>
+                            <th>處置類型</th>
+                            <th>處置起日</th>
+                            <th>放空基準價</th>
+                            <th>多方目標價 (折價)</th>
+                            <th>更新時間</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stocks-tbody">
+                        <tr>
+                            <td colspan="8" class="empty-state">
+                                <h3>資料載入中...</h3>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bottom Cards -->
+        <div class="bottom-section">
+            <!-- Price distance checker -->
+            <div class="interactive-card">
+                <h2>目標價觸及檢測器</h2>
+                <div class="calc-form">
+                    <div class="form-group">
+                        <label for="select-stock">選擇股票</label>
+                        <select id="select-stock" onchange="updateChecker()">
+                            <option value="">-- 請選擇股票 --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="current-price">目前股價 (元)</label>
+                        <input type="number" step="0.01" id="current-price" placeholder="輸入目前股價" oninput="calculateDistance()">
+                    </div>
+                </div>
+                <div class="checker-box" style="margin-top: 1.2rem;">
+                    <div class="checker-result-box" id="checker-result"></div>
+                </div>
+            </div>
+            
+            <!-- Quick Command Guide -->
+            <div class="interactive-card">
+                <h2>系統維護說明</h2>
+                <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+                    <p style="margin-bottom: 0.8rem;">本看板資料源來自每日盤後爬網產出的 <code>targets.json</code>。</p>
+                    <p style="margin-bottom: 0.8rem;"><strong>如何更新名單與股價？</strong></p>
+                    <p style="margin-bottom: 0.8rem;">在終端機中運行自動化爬蟲腳本：</p>
+                    <pre style="background: rgba(0, 0, 0, 0.4); padding: 0.6rem; border-radius: 6px; font-family: monospace; color: var(--success); font-size: 0.85rem; border: 1px solid var(--border-color); margin-bottom: 0.8rem;">python auto_update_targets.py</pre>
+                    <p>腳本會自動爬取證交所與櫃買中心公告，並至 Yahoo Finance 下載最新價格資訊。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic Script -->
+    <script>
+        let allStocks = [];
+        let activeFilter = 'all';
+
+        // 載入資料
+        async function loadData() {
+            const tbody = document.getElementById("stocks-tbody");
+            tbody.innerHTML = `<tr><td colspan="8" class="empty-state"><h3>資料載入中...</h3></td></tr>`;
+            
+            try {
+                // 使用 fetch 載入 targets.json (路徑改為 db/ 下)
+                const response = await fetch("db/targets.json?t=" + new Date().getTime());
+                if (!response.ok) {
+                    throw new Error("無法讀取 db/targets.json 檔案");
+                }
+                
+                allStocks = await response.json();
+                
+                // 更新統計數字
+                updateStatistics();
+                
+                // 渲染表格
+                renderTable();
+                
+                // 更新檢測器下拉選單
+                populateStockSelector();
+                
+            } catch (error) {
+                console.error("載入失敗: ", error);
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="empty-state">
+                            <h3 style="color: var(--danger);">載入資料失敗</h3>
+                            <p style="margin-top: 0.5rem;">請確認 db/targets.json 檔案是否存在，或已運行過更新腳本。</p>
+                        </td>
+                    </tr>
+                `;
+            }
+        }
+
+        // 更新統計數據
+        function updateStatistics() {
+            document.getElementById("stat-total").innerText = allStocks.length;
+            
+            const count5m = allStocks.filter(s => s.type === "5分鐘").length;
+            document.getElementById("stat-5m").innerText = count5m;
+            
+            const count20m = allStocks.filter(s => s.type === "20分鐘").length;
+            document.getElementById("stat-20m").innerText = count20m;
+        }
+
+        // 設定過濾條件
+        function setFilter(filterType) {
+            activeFilter = filterType;
+            
+            // 更新按鈕樣式
+            const tabs = document.querySelectorAll(".filter-tab");
+            tabs.forEach(tab => {
+                tab.classList.remove("active");
+                if (tab.getAttribute("onclick").includes(filterType)) {
+                    tab.classList.add("active");
+                }
+            });
+            
+            renderTable();
+        }
+
+        // 渲染表格內容
+        function renderTable() {
+            const tbody = document.getElementById("stocks-tbody");
+            const searchQuery = document.getElementById("search-input").value.toLowerCase().trim();
+            
+            // 篩選
+            let filtered = allStocks.filter(s => {
+                // 關鍵字搜尋
+                const matchesSearch = s.code.includes(searchQuery) || s.name.toLowerCase().includes(searchQuery);
+                if (!matchesSearch) return false;
+                
+                // 分類過濾
+                if (activeFilter === '5m') return s.type === '5分鐘';
+                if (activeFilter === '20m') return s.type === '20分鐘';
+                if (activeFilter === 'waiting') return s.baseline_price === 'WAITING_FOR_OPEN' || s.target_price === 'WAITING_FOR_OPEN';
+                
+                return true;
+            });
+            
+            if (filtered.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="empty-state">
+                            <h3>查無符合條件的處置股</h3>
+                            <p style="margin-top: 0.5rem;">請重設篩選條件或關鍵字搜尋。</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            tbody.innerHTML = "";
+            filtered.forEach(s => {
+                const tr = document.createElement("tr");
+                
+                // 處置類型徽章
+                const badgeClass = s.type === "5分鐘" ? "badge-5m" : "badge-20m";
+                
+                // 基準價顯示
+                let baselineDisplay = "";
+                if (s.baseline_price === "WAITING_FOR_OPEN") {
+                    baselineDisplay = `<span class="waiting-text">待開盤</span>`;
+                } else {
+                    baselineDisplay = `<span class="price-text">${parseFloat(s.baseline_price).toFixed(2)}</span>`;
+                }
+                
+                // 目標價顯示與折幅標註
+                let targetDisplay = "";
+                if (s.target_price === "WAITING_FOR_OPEN") {
+                    targetDisplay = `<span class="waiting-text">待開盤</span>`;
+                } else {
+                    const discount = s.type === "5分鐘" ? "87折" : "85折";
+                    targetDisplay = `<span class="price-text target-price-cell">${parseFloat(s.target_price).toFixed(2)}</span> <span style="font-size: 0.75rem; color: var(--text-secondary);">(${discount})</span>`;
+                }
+                
+                tr.innerHTML = `
+                    <td class="price-text" style="font-weight: 600; color: var(--accent);">${s.code}</td>
+                    <td style="font-weight: 500;">${s.name}</td>
+                    <td><span class="badge ${badgeClass}">${s.type}</span></td>
+                    <td style="color: var(--text-secondary);">${s.start_date}</td>
+                    <td>${baselineDisplay}</td>
+                    <td>${targetDisplay}</td>
+                    <td style="color: var(--text-secondary); font-size: 0.85rem;">${s.updated_at}</td>
+                    <td>
+                        <button class="filter-tab" style="padding: 0.3rem 0.6rem; font-size: 0.8rem; background: rgba(255,255,255,0.04);" onclick="selectStockForCheck('${s.code}')">檢測</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // 下拉選單填充
+        function populateStockSelector() {
+            const select = document.getElementById("select-stock");
+            // 保留第一個
+            select.innerHTML = '<option value="">-- 請選擇股票 --</option>';
+            
+            // 過濾掉待開盤的股票，只保留有確定目標價的
+            const validStocks = allStocks.filter(s => s.target_price !== 'WAITING_FOR_OPEN');
+            
+            validStocks.forEach(s => {
+                const opt = document.createElement("option");
+                opt.value = s.code;
+                opt.text = `${s.code} ${s.name} (${s.type} 目標: ${parseFloat(s.target_price).toFixed(2)}元)`;
+                select.appendChild(opt);
+            });
+        }
+
+        // 從表格點擊檢測按鈕
+        function selectStockForCheck(code) {
+            const select = document.getElementById("select-stock");
+            select.value = code;
+            updateChecker();
+            
+            // 滾動到檢測器卡片
+            document.getElementById("select-stock").scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 股票選取更新
+        function updateChecker() {
+            const select = document.getElementById("select-stock");
+            const code = select.value;
+            const currentInput = document.getElementById("current-price");
+            const resultBox = document.getElementById("checker-result");
+            
+            if (!code) {
+                currentInput.value = "";
+                resultBox.style.display = "none";
+                return;
+            }
+            
+            const stock = allStocks.find(s => s.code === code);
+            if (stock && stock.target_price !== 'WAITING_FOR_OPEN') {
+                // 給予目前股價一個基準價或前收做預設值
+                currentInput.value = parseFloat(stock.baseline_price).toFixed(2);
+                calculateDistance();
+            }
+        }
+
+        // 計算目前價格與目標價的距離
+        function calculateDistance() {
+            const select = document.getElementById("select-stock");
+            const code = select.value;
+            const currentPrice = parseFloat(document.getElementById("current-price").value);
+            const resultBox = document.getElementById("checker-result");
+            
+            if (!code || isNaN(currentPrice) || currentPrice <= 0) {
+                resultBox.style.display = "none";
+                return;
+            }
+            
+            const stock = allStocks.find(s => s.code === code);
+            const target = parseFloat(stock.target_price);
+            
+            resultBox.style.display = "block";
+            
+            if (currentPrice <= target) {
+                // 已觸及或低於目標價
+                resultBox.className = "checker-result-box alert-triggered";
+                const diffPct = ((target - currentPrice) / target * 100).toFixed(2);
+                resultBox.innerHTML = `🎉 已跌破黃金目標價！目前的價位在目標價以下 ${diffPct}% (目標: ${target.toFixed(2)}元)，建議評估買進做多！`;
+            } else {
+                // 尚未跌到目標價
+                resultBox.className = "checker-result-box alert-pending";
+                const distancePct = ((currentPrice - target) / currentPrice * 100).toFixed(2);
+                resultBox.innerHTML = `⏳ 距離黃金多方目標價 ${target.toFixed(2)}元 還差 ${distancePct}%，可持續監控等待拉回。`;
+            }
+        }
+
+        // 輸入框監聽搜尋
+        document.getElementById("search-input").addEventListener("input", renderTable);
+
+        // 頁面初始化
+        window.addEventListener("DOMContentLoaded", () => {
+            loadData();
+        });
+    </script>
+</body>
+</html>

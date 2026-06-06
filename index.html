@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣股市注意股 & 處置預警監控儀表板</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 頂部標頭與控制區 -->
+        <header class="app-header">
+            <h1 class="title">📈 台灣股市注意股 & 處置預警監控儀表板</h1>
+            
+            <div class="controls">
+                <div class="search-box">
+                    <label for="search-input">搜尋代號/名稱:</label>
+                    <input type="text" id="search-input" placeholder="例如: 3147 或 大綜...">
+                </div>
+                <div class="filter-box">
+                    <label for="market-filter">市場:</label>
+                    <select id="market-filter">
+                        <option value="全部">全部</option>
+                        <option value="上市">上市</option>
+                        <option value="上櫃">上櫃</option>
+                    </select>
+                </div>
+                <button class="nav-btn" onclick="location.href='dashboard.html'" style="background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%); border: none; padding: 8px 16px; border-radius: 8px; color: white; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); transition: all 0.2s; font-family: inherit;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">📊 處置股回測與黃金目標價</button>
+            </div>
+        </header>
+
+        <!-- 數據統計面板 -->
+        <section class="stats-panel">
+            <div class="stat-card stat-notice" id="stat-notice-card">
+                <span class="stat-label">⚠️ 隔日處置預警個股</span>
+                <span class="stat-value" id="count-notice">-- 檔</span>
+            </div>
+            <div class="stat-card stat-warn" id="stat-warn-card">
+                <span class="stat-label">💥 重點/極易/必定監控</span>
+                <span class="stat-value" id="count-warn">-- 檔</span>
+            </div>
+            <div class="stat-card stat-disposed" id="stat-disposed-card">
+                <span class="stat-label">🔒 處置及即將處置股</span>
+                <span class="stat-value" id="count-disposed">-- 檔</span>
+            </div>
+        </section>
+
+        <!-- 主內容區域 (左右雙欄 / 手機自動上下堆疊) -->
+        <main class="main-content">
+            <!-- 左側：雙表格區域 -->
+            <div class="tables-section">
+                <!-- 聽牌股區塊 -->
+                <div class="table-container">
+                    <div class="table-header" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(234, 179, 8, 0.15) 100%);">
+                        <h2 style="color: var(--color-yellow); text-shadow: 0 0 10px rgba(234, 179, 8, 0.3);">🔥 盤中即時處置聽牌監控 (今日達標，明日處置)</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="listening-table">
+                            <thead>
+                                <tr>
+                                    <th>證券代號</th>
+                                    <th>證券名稱</th>
+                                    <th class="text-center">市場</th>
+                                    <th class="text-right">昨日收盤</th>
+                                    <th class="text-right">今日最新</th>
+                                    <th class="text-right">今日成交量</th>
+                                    <th class="text-right">最易價格門檻</th>
+                                    <th class="text-right">成交量門檻</th>
+                                    <th class="text-center">聽牌狀態</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listening-tbody">
+                                <tr>
+                                    <td colspan="9" class="placeholder-row">載入中...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 預警股區塊 -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2>⚠️ 隔日處置預警有價證券 (連續注意股)</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="warning-table">
+                            <thead>
+                                <tr>
+                                    <th>證券代號</th>
+                                    <th>證券名稱</th>
+                                    <th class="text-center">市場</th>
+                                    <th class="text-right">今日收盤</th>
+                                    <th class="text-right">今日成交量</th>
+                                    <th class="text-right">明日最易觸發價</th>
+                                    <th class="text-center">預警狀態</th>
+                                </tr>
+                            </thead>
+                            <tbody id="warning-tbody">
+                                <tr>
+                                    <td colspan="7" class="placeholder-row">載入中...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 處置股區塊 -->
+                <div class="table-container">
+                    <div class="table-header">
+                        <h2 class="disposed-header">🔒 當前處置及即將處置有價證券 (處置股名單)</h2>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="disposed-table">
+                            <thead>
+                                <tr>
+                                    <th>證券代號</th>
+                                    <th>證券名稱</th>
+                                    <th class="text-center">市場</th>
+                                    <th class="text-right">今日收盤</th>
+                                    <th class="text-right" style="color: var(--color-green);">黃金目標價</th>
+                                    <th>處置期間</th>
+                                    <th class="text-center">處置狀態</th>
+                                </tr>
+                            </thead>
+                            <tbody id="disposed-tbody">
+                                <tr>
+                                    <td colspan="7" class="placeholder-row">載入中...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右側：個股詳細面板 -->
+            <aside class="detail-section" id="detail-section">
+                <div class="detail-placeholder" id="detail-placeholder">
+                    <div class="info-icon">💡</div>
+                    <p>請點擊左側列表個股查看詳細價格推算與處置原因</p>
+                </div>
+                <div class="detail-card hidden" id="detail-card">
+                    <!-- JavaScript 將在此渲染動態詳細內容 -->
+                </div>
+            </aside>
+        </main>
+        
+        <!-- 頁尾狀態列 -->
+        <footer class="app-footer">
+            <span id="status-text">就緒</span>
+        </footer>
+    </div>
+
+    <script src="dashboard.js?v=1.0.6"></script>
+</body>
+</html>
