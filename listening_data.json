@@ -1,0 +1,721 @@
+{
+    "last_updated": "2026-06-06 03:36:37",
+    "T_date": "2026-06-05",
+    "yesterday_date": "2026-06-04",
+    "listening_stocks": [
+        {
+            "code": "3149",
+            "name": "正達",
+            "market": "上市",
+            "reasons": [
+                "連續注意 4 天 (背景>=2)"
+            ],
+            "yesterday_close": 91.0,
+            "current_close": 90.80000305175781,
+            "current_vol": 33940119.0,
+            "best_price_calc": {
+                "price": 91.0,
+                "change": 0.22026094881096564,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 21274053,
+            "trigger_vol_rule": "當日週轉率達 10.0% 門檻",
+            "price_progress": 99.7802231337998,
+            "vol_progress": 159.53762548208374,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 67.0999984741211,
+                    "up_price": 88.6,
+                    "down_price": 45.6,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 116.4%)",
+                    "base_price": 67.0999984741211,
+                    "up_price": 145.5,
+                    "down_price": -11.00439974975587,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (116.4%)",
+                    "base_price": 42.04999923706055,
+                    "up_price": 91.0,
+                    "down_price": null,
+                    "is_primary": true
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 14436666.533333333,
+                    "trigger_vol": 72183333
+                },
+                {
+                    "rule": "當日週轉率達 10.0% 門檻",
+                    "baseline": 212740526.0521042,
+                    "trigger_vol": 21274053
+                },
+                {
+                    "rule": "6日累積週轉率達 50.0% (今日需達 -28.18%)",
+                    "baseline": 212740526.0521042,
+                    "trigger_vol": 0
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價漲幅達34.30%﹝第一款﹞。且06月04日之週轉率為19.96%﹝第四款﹞。最近三十個營業日起迄兩個營業日之收盤價漲幅達116.40% ﹝第二款﹞。"
+        },
+        {
+            "code": "9110",
+            "name": "越南控-DR",
+            "market": "上市",
+            "reasons": [
+                "連續注意 4 天 (背景>=2)"
+            ],
+            "yesterday_close": 3.9600000381469727,
+            "current_close": 3.950000047683716,
+            "current_vol": 334000.0,
+            "best_price_calc": {
+                "price": 3.96,
+                "change": 0.25316334672320134,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 329256,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 99.74747595160899,
+            "vol_progress": 101.44082416113905,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 2.7100000381469727,
+                    "up_price": 3.58,
+                    "down_price": 1.84,
+                    "is_primary": true
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 3.0999999046325684,
+                    "up_price": 6.2,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 65851.3,
+                    "trigger_vol": 329256
+                }
+            ],
+            "yesterday_reason": "公開資訊觀測站公告當日之前一個營業日臺灣存託憑證兩地收盤價溢價73.08 % 且當日收盤價為最近六個營業日收盤價最高者﹝第八款﹞。"
+        },
+        {
+            "code": "1312",
+            "name": "國喬",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)"
+            ],
+            "yesterday_close": 14.199999809265137,
+            "current_close": 14.399999618530273,
+            "current_vol": 29597742.0,
+            "best_price_calc": {
+                "price": 14.55,
+                "change": 1.041669343356809,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 110506938,
+            "trigger_vol_rule": "當日週轉率達 10.0% 門檻",
+            "price_progress": 98.96906954316339,
+            "vol_progress": 26.783605206760864,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 10.949999809265137,
+                    "up_price": 14.5,
+                    "down_price": 7.44,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 36.88%)",
+                    "base_price": 10.949999809265137,
+                    "up_price": 15.0,
+                    "down_price": 6.91,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 12.949999809265137,
+                    "up_price": 25.9,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (7.4倍)",
+                    "baseline": 17032408.95,
+                    "trigger_vol": 126039826
+                },
+                {
+                    "rule": "當日週轉率達 10.0% 門檻",
+                    "baseline": 1105069378.2837129,
+                    "trigger_vol": 110506938
+                },
+                {
+                    "rule": "6日累積週轉率達 50.0% (今日需達 31.45%)",
+                    "baseline": 1105069378.2837129,
+                    "trigger_vol": 347513162
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價漲幅達36.88%﹝第一款﹞。且06月04日之成交量為最近六十個營業日日平均成交量之7.40倍﹝第三款﹞。且06月04日之週轉率為11.42%﹝第四款﹞。"
+        },
+        {
+            "code": "1718",
+            "name": "中纖",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)"
+            ],
+            "yesterday_close": 9.680000305175781,
+            "current_close": 9.850000381469727,
+            "current_vol": 204881924.0,
+            "best_price_calc": {
+                "price": 9.68,
+                "change": -1.725892130822039,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 39455620,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 101.7562022879104,
+            "vol_progress": 519.2718401079492,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 6.400000095367432,
+                    "up_price": 8.45,
+                    "down_price": 4.35,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 44.7%)",
+                    "base_price": 6.400000095367432,
+                    "up_price": 9.27,
+                    "down_price": 3.53,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 6.679999828338623,
+                    "up_price": 13.4,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 7891124.05,
+                    "trigger_vol": 39455620
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價漲幅達44.70%﹝第一款﹞。"
+        },
+        {
+            "code": "1809",
+            "name": "中釉",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)"
+            ],
+            "yesterday_close": 58.5,
+            "current_close": 59.599998474121094,
+            "current_vol": 25549978.0,
+            "best_price_calc": {
+                "price": 58.5,
+                "change": -1.8456350709450502,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 16628330,
+            "trigger_vol_rule": "當日週轉率達 10.0% 門檻",
+            "price_progress": 101.88033927200186,
+            "vol_progress": 153.6533013237048,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 41.75,
+                    "up_price": 55.2,
+                    "down_price": 28.35,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 182.6%)",
+                    "base_price": 41.75,
+                    "up_price": 118.0,
+                    "down_price": -34.485499999999995,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (182.6%)",
+                    "base_price": 26.700000762939453,
+                    "up_price": 75.5,
+                    "down_price": null,
+                    "is_primary": true
+                },
+                {
+                    "rule": "60日累積變動 (182.6%)",
+                    "base_price": 23.700000762939453,
+                    "up_price": 67.0,
+                    "down_price": null,
+                    "is_primary": true
+                },
+                {
+                    "rule": "90日累積變動 (182.6%)",
+                    "base_price": 20.700000762939453,
+                    "up_price": 58.5,
+                    "down_price": null,
+                    "is_primary": true
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 8749335.233333332,
+                    "trigger_vol": 43746676
+                },
+                {
+                    "rule": "當日週轉率達 10.0% 門檻",
+                    "baseline": 166283302.71015158,
+                    "trigger_vol": 16628330
+                },
+                {
+                    "rule": "6日累積週轉率達 50.0% (今日需達 -15.91%)",
+                    "baseline": 166283302.71015158,
+                    "trigger_vol": 0
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價漲幅達29.07%。且06月04日之週轉率為21.77%﹝第四款﹞。最近三十個營業日起迄兩個營業日之收盤價漲幅達119.10% 。最近六十個營業日起迄兩個營業日之收盤價漲幅達146.83% 。最近九十個營業日起迄兩個營業日之收盤價漲幅達182.60% ﹝第二款﹞。"
+        },
+        {
+            "code": "2491",
+            "name": "吉祥全",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)"
+            ],
+            "yesterday_close": 34.0,
+            "current_close": 34.70000076293945,
+            "current_vol": 9150230.0,
+            "best_price_calc": {
+                "price": 34.0,
+                "change": -2.0172932206015197,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 3217600,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 102.05882577335133,
+            "vol_progress": 284.3805942317255,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 22.299999237060547,
+                    "up_price": 29.45,
+                    "down_price": 15.15,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 115.87%)",
+                    "base_price": 22.299999237060547,
+                    "up_price": 48.15,
+                    "down_price": -3.5390098789215103,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (115.87%)",
+                    "base_price": 15.75,
+                    "up_price": 34.0,
+                    "down_price": null,
+                    "is_primary": true
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 643519.9166666666,
+                    "trigger_vol": 3217600
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價漲幅達43.00%﹝第一款﹞。最近三十個營業日起迄兩個營業日之收盤價漲幅達115.87% ﹝第二款﹞。"
+        },
+        {
+            "code": "2351",
+            "name": "順德",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)",
+                "9日內累計 5 天 (背景>=5)"
+            ],
+            "yesterday_close": 211.0,
+            "current_close": 200.5,
+            "current_vol": 5763922.0,
+            "best_price_calc": {
+                "price": 211.0,
+                "change": 5.236907730673317,
+                "rule": "90日累積變動 (177.63%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 41283064,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 95.02369668246445,
+            "vol_progress": 13.961953017828327,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 220.0,
+                    "up_price": 290.5,
+                    "down_price": 149.5,
+                    "is_primary": true
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 151.0,
+                    "up_price": 302.0,
+                    "down_price": null,
+                    "is_primary": false
+                },
+                {
+                    "rule": "60日累積變動 (177.63%)",
+                    "base_price": 81.5,
+                    "up_price": 226.5,
+                    "down_price": null,
+                    "is_primary": true
+                },
+                {
+                    "rule": "90日累積變動 (177.63%)",
+                    "base_price": 76.0,
+                    "up_price": 211.0,
+                    "down_price": null,
+                    "is_primary": true
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 8256612.766666667,
+                    "trigger_vol": 41283064
+                }
+            ],
+            "yesterday_reason": "最近六十個營業日起迄兩個營業日之收盤價漲幅達158.89% 。最近九十個營業日起迄兩個營業日之收盤價漲幅達177.63% ﹝第二款﹞。"
+        },
+        {
+            "code": "4807",
+            "name": "日成-KY",
+            "market": "上市",
+            "reasons": [
+                "連續注意 3 天 (背景>=2)"
+            ],
+            "yesterday_close": 35.349998474121094,
+            "current_close": 38.5,
+            "current_vol": 1740082.0,
+            "best_price_calc": {
+                "price": 35.35,
+                "change": -8.181818181818178,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 1486556,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 108.9108910891089,
+            "vol_progress": 117.05458791999763,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 25.399999618530273,
+                    "up_price": 33.55,
+                    "down_price": 17.25,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 128.06%)",
+                    "base_price": 25.399999618530273,
+                    "up_price": 58.0,
+                    "down_price": -7.127239892959594,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (128.06%)",
+                    "base_price": 15.5,
+                    "up_price": 35.35,
+                    "down_price": null,
+                    "is_primary": true
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 297311.2166666667,
+                    "trigger_vol": 1486556
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價漲幅達35.80%﹝第一款﹞。最近三十個營業日起迄兩個營業日之收盤價漲幅達128.06% ﹝第二款﹞。"
+        },
+        {
+            "code": "6861",
+            "name": "睿生光電",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)",
+                "29日內累計 11 天 (背景>=11)"
+            ],
+            "yesterday_close": 348.5,
+            "current_close": 351.5,
+            "current_vol": 667130.0,
+            "best_price_calc": {
+                "price": 282.5,
+                "change": -19.630156472261735,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▼"
+            },
+            "trigger_vol_val": 7124807,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 124.42477876106194,
+            "vol_progress": 9.363481705539533,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 416.0,
+                    "up_price": 550.0,
+                    "down_price": 282.5,
+                    "is_primary": true
+                },
+                {
+                    "rule": "6日累積變動 (今日公告值 26.63%)",
+                    "base_price": 416.0,
+                    "up_price": 527.0,
+                    "down_price": 305.0,
+                    "is_primary": false
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 235.5,
+                    "up_price": 471.0,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 1424961.4166666667,
+                    "trigger_vol": 7124807
+                }
+            ],
+            "yesterday_reason": "最近六個營業日累積收盤價跌幅達26.63%。且六個營業日起迄兩個營業日收盤價價差達67.50 元﹝第一款﹞。"
+        },
+        {
+            "code": "9103",
+            "name": "美德醫療-DR",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)"
+            ],
+            "yesterday_close": 5.980000019073486,
+            "current_close": 5.849999904632568,
+            "current_vol": 15671100.0,
+            "best_price_calc": {
+                "price": 7.0,
+                "change": 19.65812160880132,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 6903244,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 83.57142720903668,
+            "vol_progress": 227.01066339245722,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 5.300000190734863,
+                    "up_price": 7.0,
+                    "down_price": 3.6,
+                    "is_primary": true
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 4.800000190734863,
+                    "up_price": 9.6,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 1380648.8,
+                    "trigger_vol": 6903244
+                }
+            ],
+            "yesterday_reason": "公開資訊觀測站公告當日之前一個營業日臺灣存託憑證兩地收盤價溢價78.36 % 且當日收盤價為最近六個營業日收盤價最高者﹝第八款﹞。"
+        },
+        {
+            "code": "6442",
+            "name": "光聖",
+            "market": "上市",
+            "reasons": [
+                "9日內累計 5 天 (背景>=5)"
+            ],
+            "yesterday_close": 2145.0,
+            "current_close": 2055.0,
+            "current_vol": 4348372.0,
+            "best_price_calc": {
+                "price": 2505.0,
+                "change": 21.897810218978105,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 7203692,
+            "trigger_vol_rule": "當日週轉率達 10.0% 門檻",
+            "price_progress": 82.03592814371258,
+            "vol_progress": 60.363102697894355,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 1895.0,
+                    "up_price": 2505.0,
+                    "down_price": 1285.0,
+                    "is_primary": true
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 2020.0,
+                    "up_price": 4040.0,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 2659415.2,
+                    "trigger_vol": 13297076
+                },
+                {
+                    "rule": "當日週轉率達 10.0% 門檻",
+                    "baseline": 72036917.80821918,
+                    "trigger_vol": 7203692
+                },
+                {
+                    "rule": "6日累積週轉率達 50.0% (今日需達 29.31%)",
+                    "baseline": 72036917.80821918,
+                    "trigger_vol": 21111089
+                }
+            ],
+            "yesterday_reason": "06月04日之本益比為80.91，且股價淨值比為23.70 。另當日週轉率為 7.30%，且其股價淨值比較該類股股價淨值比四倍以上﹝第六款﹞。六個營業日起迄兩個營業日收盤價價差達250.00元且當日收盤價為最近六個營業日收盤價最高者<font color='#FF0000'>﹝第十一款﹞</font>。"
+        },
+        {
+            "code": "2486",
+            "name": "一詮",
+            "market": "上市",
+            "reasons": [
+                "連續注意 2 天 (背景>=2)"
+            ],
+            "yesterday_close": 274.5,
+            "current_close": 279.5,
+            "current_vol": 9460947.0,
+            "best_price_calc": {
+                "price": 345.0,
+                "change": 23.43470483005367,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 23094229,
+            "trigger_vol_rule": "當日週轉率達 10.0% 門檻",
+            "price_progress": 81.01449275362319,
+            "vol_progress": 40.96671510445315,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 261.0,
+                    "up_price": 345.0,
+                    "down_price": 177.0,
+                    "is_primary": true
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 222.0,
+                    "up_price": 444.0,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 9527126.5,
+                    "trigger_vol": 47635632
+                },
+                {
+                    "rule": "當日週轉率達 10.0% 門檻",
+                    "baseline": 230942293.85307348,
+                    "trigger_vol": 23094229
+                },
+                {
+                    "rule": "6日累積週轉率達 50.0% (今日需達 25.99%)",
+                    "baseline": 230942293.85307348,
+                    "trigger_vol": 60032467
+                }
+            ],
+            "yesterday_reason": "06月04日之本益比為 538.24，且股價淨值比為12.18 。另當日週轉率為 6.67%，且其股價淨值比較該類股股價淨值比四倍以上﹝第六款﹞。"
+        },
+        {
+            "code": "3450",
+            "name": "聯鈞",
+            "market": "上市",
+            "reasons": [
+                "29日內累計 12 天 (背景>=11)"
+            ],
+            "yesterday_close": 520.0,
+            "current_close": 501.0,
+            "current_vol": 18582167.0,
+            "best_price_calc": {
+                "price": 635.0,
+                "change": 26.746506986027946,
+                "rule": "6日累積變動 (標準 32.0%)",
+                "dir": "▲"
+            },
+            "trigger_vol_val": 85953419,
+            "trigger_vol_rule": "60日日平均成交量放大 (5.0倍)",
+            "price_progress": 78.89763779527559,
+            "vol_progress": 21.61888057064955,
+            "price_thresholds": [
+                {
+                    "rule": "6日累積變動 (標準 32.0%)",
+                    "base_price": 481.0,
+                    "up_price": 635.0,
+                    "down_price": 327.0,
+                    "is_primary": true
+                },
+                {
+                    "rule": "30日累積變動 (100.0%)",
+                    "base_price": 333.5,
+                    "up_price": 667.0,
+                    "down_price": null,
+                    "is_primary": false
+                }
+            ],
+            "vol_thresholds": [
+                {
+                    "rule": "60日日平均成交量放大 (5.0倍)",
+                    "baseline": 17190683.883333333,
+                    "trigger_vol": 85953419
+                }
+            ],
+            "yesterday_reason": ""
+        }
+    ]
+}
